@@ -1,0 +1,7 @@
+db==0.1.1
+db-sqlite3==0.0.1
+Flask==2.0.1
+Flask-Bcrypt==0.7.1
+Flask-Session==0.4.0
+Flask-SQLAlchemy==2.5.1
+
