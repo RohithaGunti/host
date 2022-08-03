@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 
 
-connection = sqlite3.connect('lightup.db',check_same_thread=False)
+connection = sqlite3.connect('lightup.db')
 db = connection.cursor()
 
 class User:
