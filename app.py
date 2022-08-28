@@ -14,6 +14,11 @@ app = Flask(__name__)
 connection = sqlite3.connect('lightup.db')
 db = connection.cursor()
 
+class Database:
+    def __init__(self):
+        db.execute("CREATE TABLE users (username VARCHAR PRIMARY KEY, profile_pic VARCHAR);")
+        connection.commit()
+
 class User:
     def create_profile(self, name, pro_pic):
         db.execute("INSERT INTO users values(?,?)",(name,pro_pic,))
@@ -337,10 +342,12 @@ s = 0
 
 @app.route('/',methods=["GET","POST"])
 def index():
+    Database()
     return "Welcome, hello"
 
 @app.route('/start',methods=["GET","POST"])
 def start():
+    Database()
     name = ""
     if(User().empty()):
         name = User().switch_profile()
