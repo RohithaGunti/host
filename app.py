@@ -335,6 +335,10 @@ class Leaderboard:
 guess = Mastermind().generate_num()
 s = 0
 
+@app.route('/',methods=["GET","POST"])
+def index():
+    return "Welcome, hello"
+
 @app.route('/start',methods=["GET","POST"])
 def start():
     name = ""
